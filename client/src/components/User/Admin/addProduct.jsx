@@ -37,7 +37,7 @@ const AddProduct = props => {
         valid: false,
         touched: false,
         validationMessage: '',
-        showLabel: true
+        showlabel: true
       },
       description: {
         element: 'textarea',
@@ -54,7 +54,7 @@ const AddProduct = props => {
         valid: false,
         touched: false,
         validationMessage: '',
-        showLabel: true
+        showlabel: true
       },
       price: {
         element: 'input',
@@ -71,7 +71,7 @@ const AddProduct = props => {
         valid: false,
         touched: false,
         validationMessage: '',
-        showLabel: true
+        showlabel: true
       },
       brand: {
         element: 'select',
@@ -87,7 +87,7 @@ const AddProduct = props => {
         valid: false,
         touched: false,
         validationMessage: '',
-        showLabel: true
+        showlabel: true
       },
       shipping: {
         element: 'select',
@@ -103,7 +103,7 @@ const AddProduct = props => {
         valid: false,
         touched: false,
         validationMessage: '',
-        showLabel: true
+        showlabel: true
       },
       available: {
         element: 'select',
@@ -119,7 +119,7 @@ const AddProduct = props => {
         valid: false,
         touched: false,
         validationMessage: '',
-        showLabel: true
+        showlabel: true
       },
       wood: {
         element: 'select',
@@ -135,7 +135,7 @@ const AddProduct = props => {
         valid: false,
         touched: false,
         validationMessage: '',
-        showLabel: true
+        showlabel: true
       },
       strings: {
         element: 'select',
@@ -156,7 +156,7 @@ const AddProduct = props => {
         valid: false,
         touched: false,
         validationMessage: '',
-        showLabel: true
+        showlabel: true
       },
       publish: {
         element: 'select',
@@ -175,7 +175,7 @@ const AddProduct = props => {
         valid: false,
         touched: false,
         validationMessage: '',
-        showLabel: true
+        showlabel: true
       },
       images: {
         value: [],
@@ -185,7 +185,7 @@ const AddProduct = props => {
         valid: true,
         touched: false,
         validationMessage: '',
-        showLabel: false
+        showlabel: false
       }
     }
   });

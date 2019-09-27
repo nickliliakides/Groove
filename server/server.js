@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const formidable = require("express-formidable");
 const cloudinary = require("cloudinary");
+const mailer = require("nodemailer");
 
 const app = express();
 const mongoose = require("mongoose");
@@ -40,6 +41,34 @@ const { Site } = require("./models/site");
 const { auth } = require("./middleware/auth");
 const { admin } = require("./middleware/admin");
 
+// Email
+const { sendEmail } = require("./utils/mail/mail");
+
+//  const smtpTransport = mailer.createTransport({
+//    service: "Yahoo",
+//    auth: {
+//      user: "hermeswebdev@yahoo.com",
+//      pass: "Nl257130hrm"
+//    }
+//  })
+
+//  var mail = {
+//    from: "hermeswebdev@yahoo.com",
+//    to: "nitsolias@mail.com",
+//    subject: "Send test email",
+//    text: "Tesing groove email",
+//    html: "<b>It works!!!</b>"
+//  }
+
+//  smtpTransport.sendMail(mail, (err, res) => {
+//   if(err){
+//     console.log(err)
+//   } else {
+//     console.log('email sent')
+//   }
+//   smtpTransport.close();
+//  })
+
 /*------------------------------- USERS -------------------------------*/
 
 app.get("/api/users/auth", auth, (req, res) => {
@@ -58,8 +87,9 @@ app.get("/api/users/auth", auth, (req, res) => {
 app.post("/api/users/register", (req, res) => {
   const user = new User(req.body);
 
-  user.save((err, doc) => {
+  user.save((err, usr) => {
     if (err) return res.json({ success: false, err });
+    sendEmail(usr.email, usr.name, null, "welcome");
     res.status(200).json({
       success: true
     });

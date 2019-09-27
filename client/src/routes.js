@@ -13,7 +13,7 @@ import ProductPage from './components/Product/index';
 import UserCart from './components/User/cart';
 import UpdateProfile from './components/User/updateProfile';
 import ManageSite from './components/User/Admin/manageSite';
-
+import notFound from './components/shared/notFound';
 
 const Routes = () => {
   return (
@@ -29,7 +29,8 @@ const Routes = () => {
         <Route path="/register" exact component={Auth(Register, false)} />
         <Route path="/product/:id" exact component={Auth(ProductPage, null)} />
         <Route path="/shop" exact component={Auth(Shop, null)} />
-        <Route path="/" exact component={Auth(Home, null)} />       
+        <Route path="/" exact component={Auth(Home, null)} />
+        <Route component={Auth(notFound)} />   
       </Switch>
     </Layout>
   );

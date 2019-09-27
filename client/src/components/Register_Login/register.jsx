@@ -193,7 +193,8 @@ const Register = props => {
       <Dialog open={state.formSuccess}>
         <div className="dialog_alert">
           <p>Congratulations!!!</p>
-          <p>You have registered successfully...</p>
+          <p>You have registered successfully.</p>
+          <p>You can now login using your credentials.</p>
         </div>
       </Dialog>
     </div>
